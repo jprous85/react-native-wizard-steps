@@ -1,7 +1,18 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import {BackButton, BottomControls, ButtonDisabled, NextButton, BottomPoints, BottomPointsContent} from "../styles/BottomControls";
-import { COLORSWIZARD } from './../styles/ColorsWizard'
+import {
+  BackButton,
+  BottomControls,
+  ButtonDisabled,
+  NextButton,
+  BottomPoints,
+  BottomPointsContent,
+  StylePoints,
+  PointDisabled
+} from "../styles/BottomControls";
+import { COLORSWIZARD } from '../styles/ColorsWizard'
+
+
 const BottomButtons = (props) => {
 
   const {state, constants, modifySteps} = props;
@@ -14,13 +25,14 @@ const BottomButtons = (props) => {
       <TouchableOpacity
         key={i}
         onPress={() => {
-          console.log(i);
-          constants.goTo(i);
-          modifySteps();
+          if (i !== state.currentStep) {
+            constants.goTo(i);
+            modifySteps();
+          }
         }}
         style={BottomPoints}
       >
-        <Text style={[COLORSWIZARD[COLOR]]}>O</Text>
+        <View style={[COLORSWIZARD[COLOR], StylePoints, {backgroundColor: (i === state.currentStep) ? PointDisabled : COLOR.toLowerCase()}]}/>
       </TouchableOpacity>
     ))}</View>
 

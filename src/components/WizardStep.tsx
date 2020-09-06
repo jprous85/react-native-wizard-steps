@@ -47,7 +47,7 @@ class WizardStep extends React.Component<InterfacesWizardProps, InterfacesWizard
 
   render() {
     return(
-      <View style={{ height: height }}>
+      <View style={{ height: height, width: width }}>
 
         {this.state.currentViewStep}
 

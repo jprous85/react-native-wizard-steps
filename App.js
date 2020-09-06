@@ -17,7 +17,7 @@ export default function App() {
   return (
     <View>
       <WizardStep
-        color={WizardStep.Constants.Color.GREEN}
+        color={WizardStep.Constants.Color.BLUE}
         gradient={WizardStep.Constants.Gradient.ON}
         steps={wizardComponents}
       />
