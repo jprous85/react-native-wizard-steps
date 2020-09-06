@@ -1,0 +1,12 @@
+{
+  "name": "react-native-wizard-step",
+  "displayName": "react-native-wizard-step",
+  "expo": {
+    "name": "react-native-wizard-step",
+    "slug": "react-native-wizard-step",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
