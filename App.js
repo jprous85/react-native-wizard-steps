@@ -1,21 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import WizardStep from './src/components/WizardStep'
+
+import Step1 from './src/components/example/Step1';
+import Step2 from './src/components/example/Step2';
+import Step3 from './src/components/example/Step3';
 
 export default function App() {
+
+  const wizardComponents = [
+      {component: <Step1 />},
+      {component: <Step2 />},
+      {component: <Step3 />}
+    ];
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View>
+      <WizardStep
+        color={WizardStep.Constants.Color.GREEN}
+        gradient={WizardStep.Constants.Gradient.ON}
+        steps={wizardComponents}
+      />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+
 });
